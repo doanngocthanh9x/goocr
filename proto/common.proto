@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package common;
+
+option go_package = "github.com/doanngocthanh9x/goocr/gen/common";
+
+// Message định nghĩa trạng thái xử lý
+message ProcessingStatus {
+  enum Status {
+    SUCCESS = 0;
+    ERROR = 1;
+    PENDING = 2;
+  }
+  
+  Status status = 1;
+  string message = 2;
+  int32 code = 3;
+}
+
+// Message định nghĩa metadata
+message Metadata {
+  string request_id = 1;
+  int64 timestamp = 2;
+  string source = 3;
+}
